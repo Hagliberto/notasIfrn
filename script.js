@@ -12,20 +12,19 @@ function calcularResultado() {
     
     var notaProvaFinal = parseFloat(document.getElementById("nota-prova-final").value);
     
+    if (isNaN(notaProvaFinal)) {
+        alert("Por favor, insira a nota da prova final.");
+        return; // Interrompe a execução da função se a nota da prova final não for inserida
+    }
+    
     var notaFinal = 0;
-    if (notasAtividades.length > 0 && !isNaN(notaProvaFinal)) {
+    if (notasAtividades.length > 0) {
         var mediaAtividades = notasAtividades.reduce(function(acc, curr) {
             return acc + curr;
         }, 0) / notasAtividades.length;
         
         notaFinal = 0.4 * mediaAtividades + 0.6 * notaProvaFinal;
-    } else if (notasAtividades.length > 0) {
-        notaFinal = notasAtividades.reduce(function(acc, curr) {
-            return acc + curr;
-        }, 0) / notasAtividades.length;
-    } else if (!isNaN(notaProvaFinal)) {
-        notaFinal = notaProvaFinal;
-    }
+    } 
     
     var resultadoElement = document.getElementById("resultado");
     resultadoElement.innerHTML = "Nota Final: " + notaFinal.toFixed(2);
