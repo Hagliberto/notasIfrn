@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Médias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+        }
+        
+        .form-group label {
+            display: inline-block;
+            width: 150px;
+        }
+        
+        .form-group input {
+            width: 100px;
+        }
+        
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        #resultado .aprovado {
+            color: green;
+        }
+        
+        #resultado .recuperacao {
+            color: orange;
+        }
+        
+        #resultado .reprovado {
+            color: red;
+        }
+        
+        #botao-calcular,
+        #botao-reset {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Médias</h1>
+    
+    <div class="form-group">
+        <label for="nota-atividade-1">Nota Atividade 1:</label>
+        <input type="text" id="nota-atividade-1">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-2">Nota Atividade 2:</label>
+        <input type="text" id="nota-atividade-2">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-3">Nota Atividade 3:</label>
+        <input type="text" id="nota-atividade-3">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-4">Nota Atividade 4:</label>
+        <input type="text" id="nota-atividade-4">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-5">Nota Atividade 5:</label>
+        <input type="text" id="nota-atividade-5">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-6">Nota Atividade 6:</label>
+        <input type="text" id="nota-atividade-6">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-7">Nota Atividade 7:</label>
+        <input type="text" id="nota-atividade-7">
+    </div>
+    <div class="form-group">
+        <label for="nota-atividade-8">Nota Atividade 8:</label>
+        <input type="text" id="nota-atividade-8">
+    </div>
+    <div class="form-group">
+        <label for="nota-prova-final">Nota Prova Final:</label>
+        <input type="text" id="nota-prova-final">
+    </div>
+    
+    <button id="botao-calcular" onclick="calcularResultado()">Calcular</button>
+    <button id="botao-reset" onclick="reset()">Reset</button>
+    
+    <div id="resultado"></div>
+    
+    <script>
+        function calcularResultado() {
+            var notasAtividades = [];
+            for (var i = 1; i <= 8; i++) {
+                var nota = parseFloat(document.getElementById("nota-atividade-" + i).value);
+                if (!isNaN(nota)) {
+                    notasAtividades.push(nota);
+                }
+            }
+            
+            var notaProvaFinal = parseFloat(document.getElementById("nota-prova-final").value);
+            
+            var notaFinal = 0;
+            if (notasAtividades.length > 0 && !isNaN(notaProvaFinal)) {
+                var mediaAtividades = notasAtividades.reduce(function(acc, curr) {
+                    return acc + curr;
+                }, 0) / notasAtividades.length;
+                
+                notaFinal = 0.4 * mediaAtividades + 0.6 * notaProvaFinal;
+            } else if (notasAtividades.length > 0) {
+                notaFinal = notasAtividades.reduce(function(acc, curr) {
+                    return acc + curr;
+                }, 0) / notasAtividades.length;
+            } else if (!isNaN(notaProvaFinal)) {
+                notaFinal = notaProvaFinal;
+            }
+            
+            var resultadoElement = document.getElementById("resultado");
+            resultadoElement.innerHTML = "Nota Final: " + notaFinal.toFixed(2);
+            
+            if (notaFinal >=6.0) {
+                resultadoElement.className = "aprovado";
+                resultadoElement.innerHTML += "<br>Situação: Aprovado";
+            } else if (notaFinal >= 3.0) {
+                resultadoElement.className = "recuperacao";
+                resultadoElement.innerHTML += "<br>Situação: Recuperação";
+            } else {
+                resultadoElement.className = "reprovado";
+                resultadoElement.innerHTML += "<br>Situação: Reprovado";
+            }
+        }
+        
+        function reset() {
+            for (var i = 1; i <= 8; i++) {
+                document.getElementById("nota-atividade-" + i).value = "";
+            }
+            
+            document.getElementById("nota-prova-final").value = "";
+            
+            document.getElementById("resultado").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
