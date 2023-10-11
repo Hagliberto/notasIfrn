@@ -52,6 +52,13 @@ button:hover {
     background-color: #45a049;
 }
 
+#resultado-media {
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
 #resultado {
     font-size: 18px;
     margin-top: 20px;
