@@ -1,5 +1,28 @@
+document.getElementById("botao-calcular-media").addEventListener("click", calcularMedia);
 document.getElementById("botao-calcular").addEventListener("click", calcularResultado);
 document.getElementById("botao-reset").addEventListener("click", reset);
+
+function calcularMedia() {
+    var notasAtividades = [];
+    for (var i = 1; i <= 8; i++) {
+        var nota = parseFloat(document.getElementById("nota-atividade-" + i).value);
+        if (!isNaN(nota)) {
+            notasAtividades.push(nota);
+        }
+    }
+    
+    if (notasAtividades.length === 0) {
+        alert("Por favor, insira as notas das atividades.");
+        return; // Interrompe a execução da função se as notas das atividades não forem inseridas
+    }
+    
+    var mediaAtividades = notasAtividades.reduce(function(acc, curr) {
+        return acc + curr;
+    }, 0) / notasAtividades.length;
+    
+    var resultadoElement = document.getElementById("resultado-media");
+    resultadoElement.innerHTML = "Média das Atividades: " + mediaAtividades.toFixed(2);
+}
 
 function calcularResultado() {
     var notasAtividades = [];
@@ -47,6 +70,10 @@ function reset() {
         inputs[i].value = "";
     }
     
+    var resultadoElement = document.getElementById("resultado-media");
+    resultadoElement.innerHTML = "";
+    resultadoElement.className = "";
+
     var resultadoElement = document.getElementById("resultado");
     resultadoElement.innerHTML = "";
     resultadoElement.className = "";
