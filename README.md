@@ -5,9 +5,13 @@ Este é o código-fonte de uma calculadora de notas desenvolvida para o curso de
 ## Funcionalidades
 
 ✅ Inserir notas das atividades: A calculadora possui campos para inserir as notas das atividades de 1 a 8.
+
 ✅ Calcular média das atividades: Ao clicar no botão "Calcular Média", a calculadora realiza o cálculo da média das notas das atividades.
+
 ✅ Exibir nota parcial: A calculadora exibe a nota parcial, que é calculada a partir da média das atividades.
+
 ✅ Exibir quantidade de atividades realizadas: A calculadora exibe a quantidade de atividades realizadas com base nas notas inseridas.
+
 ✅ Exibir nota necessária na prova final: A calculadora calcula e exibe a nota necessária na prova final para ser aprovado, considerando uma média mínima de 6.
 
 ## Tecnologias Utilizadas
