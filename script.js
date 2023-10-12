@@ -15,8 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function validarNota(nota) {
-  return !isNaN(nota) && nota >= 0 && nota <= 10;
+function validarNota(nota, isNotaFinal) {
+  if (isNotaFinal) {
+    return !isNaN(nota) && nota >= 0 && nota <= 10;
+  } else {
+    return !isNaN(nota) && nota >= 0 && nota <= 10;
+  }
 }
 
 function calcularMedia() {
@@ -27,7 +31,7 @@ function calcularMedia() {
     var campoNota = document.getElementById("nota-atividade-" + i);
     var nota = parseFloat(campoNota.value.replace(",", "."));
 
-    if (validarNota(nota)) {
+    if (validarNota(nota, false)) {
       campoNota.classList.remove("campo-invalido");
       notasAtividades.push(nota);
       notasValidas = true;
@@ -75,6 +79,10 @@ function calcularMedia() {
 
   document.getElementById("nota-prova-final-necessaria").textContent =
     notaProvaFinalNecessaria.toFixed(2);
+
+  // Limitar a nota da prova final a 10
+  var campoNotaProvaFinal = document.getElementById("nota-prova-final");
+  campoNotaProvaFinal.value = Math.min(10, campoNotaProvaFinal.value);
 }
 
 function calcularResultado() {
@@ -85,7 +93,7 @@ function calcularResultado() {
     var campoNota = document.getElementById("nota-atividade-" + i);
     var nota = parseFloat(campoNota.value.replace(",", "."));
 
-    if (validarNota(nota)) {
+    if (validarNota(nota, false)) {
       campoNota.classList.remove("campo-invalido");
       notasAtividades.push(nota);
       notasValidas = true;
@@ -97,7 +105,7 @@ function calcularResultado() {
   var campoNotaProvaFinal = document.getElementById("nota-prova-final");
   var notaProvaFinal = parseFloat(campoNotaProvaFinal.value.replace(",", "."));
 
-  if (validarNota(notaProvaFinal)) {
+  if (validarNota(notaProvaFinal, true)) {
     campoNotaProvaFinal.classList.remove("campo-invalido");
     notasValidas = true;
   } else {
@@ -108,6 +116,9 @@ function calcularResultado() {
     alert("Por favor, insira pelo menos uma nota válida entre 0 e 10.");
     return;
   }
+
+  // Limitar a nota da prova final a 10
+  campoNotaProvaFinal.value = Math.min(10, campoNotaProvaFinal.value);
 
   if (isNaN(notaProvaFinal)) {
     alert("Por favor, insira a nota da prova final.");
@@ -146,6 +157,7 @@ function calcularResultado() {
     }
   }
 }
+
 
 function reset() {
   var inputs = document.getElementsByTagName("input");
