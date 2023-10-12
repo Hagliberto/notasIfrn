@@ -20,8 +20,13 @@ function calcularMedia() {
         return acc + curr;
     }, 0) / notasAtividades.length;
     
+    var porcentagemMedia = mediaAtividades * 0.4;
+    var notaProvaFinalNecessaria = (6 - porcentagemMedia) / 0.6;
+    
     var resultadoElement = document.getElementById("resultado-media");
-    resultadoElement.innerHTML = "Média das Atividades: " + mediaAtividades.toFixed(2);
+    resultadoElement.innerHTML = "Média das Atividades: " + mediaAtividades.toFixed(2) + "<br>";
+    resultadoElement.innerHTML += "Porcentagem da Média: " + porcentagemMedia.toFixed(2) + "<br>";
+    resultadoElement.innerHTML += "Nota na Prova Final Necessária para Aprovação: " + notaProvaFinalNecessaria.toFixed(2);
 }
 
 function calcularResultado() {
