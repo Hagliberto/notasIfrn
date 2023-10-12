@@ -6,51 +6,58 @@
 </head>
 <body>
     <h1>Calculadora de Notas</h1>
-    <h5>Insira as suas notas utilizando o . (ponto) no lugar da , (vírgula)</h5>
     <div class="formulario">
         <div class="campo">
             <label for="nota-atividade-1">Nota da Atividade 1:</label>
-            <input type="text" id="nota-atividade-1" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-1" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-2">Nota da Atividade 2:</label>
-            <input type="text" id="nota-atividade-2" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-2" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-3">Nota da Atividade 3:</label>
-            <input type="text" id="nota-atividade-3" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-3" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-4">Nota da Atividade 4:</label>
-            <input type="text" id="nota-atividade-4" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-4" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-5">Nota da Atividade 5:</label>
-            <input type="text" id="nota-atividade-5" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-5" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-6">Nota da Atividade 6:</label>
-            <input type="text" id="nota-atividade-6" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-6" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-7">Nota da Atividade 7:</label>
-            <input type="text" id="nota-atividade-7" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-7" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-atividade-8">Nota da Atividade 8:</label>
-            <input type="text" id="nota-atividade-8" placeholder="Informe a nota">
+            <input type="text" id="nota-atividade-8" placeholder="Insira a nota desta atividade">
         </div>
         <div class="campo">
             <label for="nota-prova-final">Nota da Prova Final:</label>
-            <input type="text" id="nota-prova-final" placeholder="Obrigátorio informar a nota da prova presencial">
+            <input type="text" id="nota-prova-final" placeholder="É obrigátorio informar a nota da prova presencial">
         </div>
+
+        <div id="resultado-box">
+            <div>Média das Atividades: <span id="media-atividades"></span></div>
+            <div>Nota Parcial: <span id="parcial"></span></div>
+            <div>Precisa de: <span id="nota-prova-final-necessaria"> na presencial</span></div>
+        </div>
+          
         
         <button id="botao-calcular-media">Nota Parcial</button>
         <button id="botao-calcular">Nota Final</button>
         <button id="botao-reset">Resetar Notas</button>
         
-        <div id="resultado-media"></div>
-        <div id="resultado"></div>
+        <div id="parcial"></div>
+        <div id="final"></div>
+
     </div>
     
     <script src="script.js"></script>
