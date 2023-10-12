@@ -1,19 +1,20 @@
 # Calculadora de Notas
 
-Uma calculadora de notas simples para calcular a média final com base nas notas das atividades e na nota da prova final.
+Este é o código-fonte de uma calculadora de notas desenvolvida para o curso de Sistemas para Internet do IFRN. A calculadora permite calcular a média das atividades, a nota parcial, a quantidade de atividades realizadas e a nota necessária na prova final para ser aprovado.
 
 ## Funcionalidades
 
-- Permite inserir as notas das atividades e a nota da prova final.
-- Calcula a média final com base nas notas fornecidas.
-- Fornece o resultado da média final ao clicar no botão "Calcular".
-- Permite redefinir todos os campos ao clicar no botão "Resetar".
+✅ Inserir notas das atividades: A calculadora possui campos para inserir as notas das atividades de 1 a 8.
+✅ Calcular média das atividades: Ao clicar no botão "Calcular Média", a calculadora realiza o cálculo da média das notas das atividades.
+✅ Exibir nota parcial: A calculadora exibe a nota parcial, que é calculada a partir da média das atividades.
+✅ Exibir quantidade de atividades realizadas: A calculadora exibe a quantidade de atividades realizadas com base nas notas inseridas.
+✅ Exibir nota necessária na prova final: A calculadora calcula e exibe a nota necessária na prova final para ser aprovado, considerando uma média mínima de 6.
 
 ## Tecnologias Utilizadas
 
-- HTML5
-- CSS3
-- JavaScript
+- HTML5: Linguagem de marcação utilizada para estruturar a página da calculadora.
+- CSS3: Linguagem de estilo utilizada para definir a aparência e o layout da calculadora.
+- JavaScript: Linguagem de programação utilizada para implementar a lógica de cálculo da média final.
 
 ## Instalação
 
@@ -26,10 +27,10 @@ Acesse: https://hagliberto.github.io/notasIfrn/
 
 ## Uso
 
-1. Insira as notas das atividades nos campos correspondentes.
-2. Insira a nota da prova final no campo correspondente.
-3. Clique no botão "Calcular" para obter a média final.
-4. Clique no botão "Resetar" para limpar todos os campos e reiniciar.
+- Insira as notas das atividades nos campos correspondentes.
+- Clique no botão "Calcular Média" para calcular a média das atividades e exibir a nota parcial.
+- Verifique a nota parcial, a quantidade de atividades realizadas e a nota necessária na prova final.
+- Clique no botão "Apagar Notas" para limpar todos os campos e reiniciar.
 
 ## Contribuição
 
