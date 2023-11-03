@@ -73,7 +73,7 @@ function calcularMedia() {
 
   // Atualiza o elemento no DOM com a nota parcial
   var resultadoElement = document.getElementById("parcial");
-  resultadoElement.innerHTML = "Nota Parcial: " + porcentagemMedia.toFixed(2);
+  resultadoElement.innerHTML = "" + porcentagemMedia.toFixed(2);
 
   // Exibe as informações no resultado-box
   document.getElementById("media-atividades").textContent =
@@ -229,3 +229,4 @@ function reset() {
     resultadoElement.className = "";
   });
 }
+
