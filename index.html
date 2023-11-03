@@ -3,7 +3,7 @@
     <head>
         <title>Calculadora de Notas</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="icon"type="image/x-icon"href="icon.jpg">
+        <link rel="icon" type="image/x-icon" href="icon.jpg">
     </head>
     <body>
         <div class="container">
@@ -12,76 +12,105 @@
                 <p>Curso de Sistemas Para Internet do IFRN</p>
             </header>
             <div class="formulario">
-                <div class="campos">
+                <label>Atividades Virtuais</label>
+                <div class="form-group">
                     <!-- Campos das atividades -->
+
                     <div class="campo">
-                        <label for="nota-atividade-1">Nota da Atividade 1:</label>
+
                         <input type="text" id="nota-atividade-1"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 1">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-2">Nota da Atividade 2:</label>
+
                         <input type="text" id="nota-atividade-2"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 2">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-3">Nota da Atividade 3:</label>
+
                         <input type="text" id="nota-atividade-3"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 3">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-4">Nota da Atividade 4:</label>
+
                         <input type="text" id="nota-atividade-4"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 4">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-5">Nota da Atividade 5:</label>
+
                         <input type="text" id="nota-atividade-5"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 5">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-6">Nota da Atividade 6:</label>
+
                         <input type="text" id="nota-atividade-6"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 6">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-7">Nota da Atividade 7:</label>
+
                         <input type="text" id="nota-atividade-7"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 7">
                     </div>
                     <div class="campo">
-                        <label for="nota-atividade-8">Nota da Atividade 8:</label>
+
                         <input type="text" id="nota-atividade-8"
-                            placeholder="Insira a nota desta atividade">
+                            class="form-control"
+                            placeholder="Insira a nota da atividade 8">
                     </div>
                 </div>
 
                 <div class="campo">
                     <label for="nota-prova-final">Prova Final</label>
                     <input type="text" id="nota-prova-final"
+                        class="form-control"
                         placeholder="É obrigatório informar a nota da prova presencial">
                 </div>
                 <div>Resumo das Notas</div>
-<div id="resultado-box">
-    <div class="resultado-item">
-        <strong>Média das Atividades:</strong> <span id="media-atividades">0</span>
-    </div>
-    <div class="resultado-item">
-        <strong>Nota Parcial:</strong> <span id="parcial">0</span>
-    </div>
-    <div class="resultado-item">
-        <strong>Atividades Realizadas:</strong> <span id="atividades-realizadas">0</span>
-    </div>
-    <div class="resultado-item">
-        <strong>Preciso de:</strong> <span id="nota-prova-final-necessaria">0</span>
-    </div>
+                <div id="resultado-box">
+                    <div class="resultado-item">
+                        <strong>Quantidades de Atividades Realizadas:</strong>
+                        <span
+                            id="atividades-realizadas">0</span>
+                    </div>
+                    <div class="resultado-item">
+                        <strong>Média das Atividades:</strong> <span
+                            id="media-atividades">0</span>
+                    </div>
+                    <div class="resultado-item">
+                        <strong>Nota Parcial:</strong> <span id="parcial">0</span>
+                    </div>
 
-    <div class="botoes">
-        <div><button id="botao-calcular-media">Nota Parcial</button></div>
-        <div><button id="botao-calcular">Nota Final</button></div>
-        <div><button id="botao-reset">Apagar Notas</button></div>
-    </div>
-</div>
+                    <div class="botoes">
+                        <button class="btn btn-warning btn-light btn-clickable"
+                            id="botao-calcular-media">Calcular Média</button>
+                        <button class="btn btn-primary btn-light btn-clickable"
+                            id="botao-calcular">Calcular Resultado</button>
+                        <button class="btn btn-danger btn-light btn-clickable"
+                            id="botao-reset">Apagar Notas</button>
+                    </div>
+                </div>
+                <div class="resultado-item bg-info text-white">
+                    <strong>Preciso de:</strong> <span
+                        id="nota-prova-final-necessaria"></span>
+                </div>
+                <!-- Última versão CSS compilada e minificada -->
+                <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+                    crossorigin="anonymous">
+
+                <!-- Tema opcional -->
+                <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+                    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+                    crossorigin="anonymous">
 
                 <div id="parcial"></div>
                 <div id="final"></div>
